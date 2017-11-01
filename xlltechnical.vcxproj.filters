@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{09a5b92b-9c97-44b4-8b39-e55d14b65e82}</UniqueIdentifier>
+      <Extensions>cpp</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{63e7b9ca-19fa-4234-bf33-7239f887c43d}</UniqueIdentifier>
+      <Extensions>h</Extensions>
+    </Filter>
+    <Filter Include="array">
+      <UniqueIdentifier>{5f887ddc-ca2f-4d4b-98c0-96a19a017d0e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility">
+      <UniqueIdentifier>{9541b1ad-13c9-4915-aa74-b26a91deea94}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="xlltechnical.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\xllarray\array.h">
+      <Filter>array</Filter>
+    </ClInclude>
+    <ClInclude Include="..\xllutility\utility.h">
+      <Filter>utility</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="xlltechnical.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlltick.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xllewma.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xllchange.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\xllarray\empty.cpp">
+      <Filter>array</Filter>
+    </ClCompile>
+    <ClCompile Include="..\xllarray\array.cpp">
+      <Filter>array</Filter>
+    </ClCompile>
+    <ClCompile Include="xllrelative_strength.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\xllarray\take.cpp">
+      <Filter>array</Filter>
+    </ClCompile>
+    <ClCompile Include="..\xllarray\drop.cpp">
+      <Filter>array</Filter>
+    </ClCompile>
+    <ClCompile Include="..\xllarray\index.cpp">
+      <Filter>array</Filter>
+    </ClCompile>
+    <ClCompile Include="..\xllarray\args.cpp">
+      <Filter>array</Filter>
+    </ClCompile>
+    <ClCompile Include="xllmacd.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xllmoments.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\xllarray\buffer.cpp">
+      <Filter>array</Filter>
+    </ClCompile>
+    <ClCompile Include="..\xllarray\getset.cpp">
+      <Filter>array</Filter>
+    </ClCompile>
+    <ClCompile Include="xlltrue_range.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\xllutility\this.cpp">
+      <Filter>utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\xllutility\utility.cpp">
+      <Filter>utility</Filter>
+    </ClCompile>
+    <ClCompile Include="xllminmax.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xllreset.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xlllag.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
