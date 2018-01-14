@@ -7,8 +7,9 @@ using namespace technical;
 using namespace xll;
 
 static AddInX xai_tai_lag(
-	FunctionX(XLL_HANDLEX XLL_UNCALCEDX, _T("?xll_tai_lag"), TAI_PREFIX _T("LAG"))
-	.Arg(XLL_USHORTX, _T("Count"), _T("is the number of periods to lag. "))
+	FunctionX(XLL_HANDLE, _T("?xll_tai_lag"), TAI_PREFIX _T("LAG"))
+	.Uncalced()
+    .Arg(XLL_USHORT, _T("Count"), _T("is the number of periods to lag. "))
 	.Category(CATEGORY)
 	.FunctionHelp(_T("Return a handle to the price lag indicator."))
 	.Documentation(

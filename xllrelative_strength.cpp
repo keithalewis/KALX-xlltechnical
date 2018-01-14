@@ -7,9 +7,10 @@ using namespace technical;
 using namespace xll;
 
 static AddInX xai_tai_relative_strength(
-	FunctionX(XLL_HANDLEX XLL_UNCALCEDX, _T("?xll_tai_relative_strength"), TAI_PREFIX _T("RELATIVE.STRENGTH"))
-	.Arg(XLL_DOUBLEX, _T("Weight"), _T("is the weight used to decay the data. "))
-	.Category(CATEGORY)
+	FunctionX(XLL_HANDLE, _T("?xll_tai_relative_strength"), TAI_PREFIX _T("RELATIVE.STRENGTH"))
+	.Arg(XLL_DOUBLE, _T("Weight"), _T("is the weight used to decay the data. "))
+	.Uncalced()
+    .Category(CATEGORY)
 	.FunctionHelp(_T("Return a handle to the difference of exponentially weighted moving averages of prices."))
 	.Documentation(
 		_T("The parameter of this indicator is the <codeInline>Weight</codeInline> and the state is determined ")
@@ -41,8 +42,8 @@ xll_tai_relative_strength(double w)
 }
 
 static AddInX xai_tai_relative_strength_index(
-	FunctionX(XLL_DOUBLEX, _T("?xll_tai_relative_strength_index"), TAI_PREFIX _T("RELATIVE.STRENGTH.INDEX"))
-	.Arg(XLL_DOUBLEX, _T("RS"), _T("is the relative strength. "))
+	FunctionX(XLL_DOUBLE, _T("?xll_tai_relative_strength_index"), TAI_PREFIX _T("RELATIVE.STRENGTH.INDEX"))
+	.Arg(XLL_DOUBLE, _T("RS"), _T("is the relative strength. "))
 	.Category(CATEGORY)
 	.FunctionHelp(_T("Returns the relative strength index as a number between 0 and 1. "))
 	.Documentation(

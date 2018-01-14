@@ -7,9 +7,10 @@ using namespace technical;
 using namespace xll;
 
 static AddInX xai_ta_ewma(
-	FunctionX(XLL_HANDLEX XLL_UNCALCEDX, _T("?xll_ta_ewma"), TAI_PREFIX _T("EWMA"))
-	.Arg(XLL_DOUBLEX, _T("Weight"), _T("is the weight used to decay the data. "))
-	.Category(CATEGORY)
+	FunctionX(XLL_HANDLE, _T("?xll_ta_ewma"), TAI_PREFIX _T("EWMA"))
+	.Arg(XLL_DOUBLE, _T("Weight"), _T("is the weight used to decay the data. "))
+	.Uncalced()
+    .Category(CATEGORY)
 	.FunctionHelp(_T("Return the exponentially weighted moving average of prices."))
 	.Documentation(
 		_T("The parameter for this indicator is the <codeInline>Weight</codeInline> and the state is the ")

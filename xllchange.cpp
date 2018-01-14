@@ -7,8 +7,9 @@ using namespace technical;
 using namespace xll;
 
 static AddInX xai_tai_change(
-	FunctionX(XLL_HANDLEX XLL_UNCALCEDX, _T("?xll_tai_change"), TAI_PREFIX _T("CHANGE"))
-	.Category(CATEGORY)
+	FunctionX(XLL_HANDLE, _T("?xl_tai_change"), TAI_PREFIX _T("CHANGE"))
+	.Uncalced()
+    .Category(CATEGORY)
 	.FunctionHelp(_T("Return a handle to the price change indicator."))
 	.Documentation(
 		_T("This indicator has no parameters and the state is the last price. ")
@@ -34,8 +35,9 @@ xll_tai_change()
 }
 
 static AddInX xai_tai_change_relative(
-	FunctionX(XLL_HANDLEX XLL_UNCALCEDX, _T("?xll_tai_change_relative"), TAI_PREFIX _T("CHANGE.RELATIVE"))
-	.Category(CATEGORY)
+	FunctionX(XLL_HANDLE, _T("?xll_tai_change_relative"), TAI_PREFIX _T("CHANGE.RELATIVE"))
+	.Uncalced()
+    .Category(CATEGORY)
 	.FunctionHelp(_T("Return the relative change in Price."))
 	.Documentation(
 		_T("The <newTerm>relative change</newTerm> is the difference between the current price and the last price divided by the last price. ")
@@ -60,8 +62,9 @@ xll_tai_change_relative()
 }
 
 static AddInX xai_tai_change_logarithmic(
-	FunctionX(XLL_HANDLEX XLL_UNCALCEDX, _T("?xll_tai_change_logarithmic"), TAI_PREFIX _T("CHANGE.LOGARITHMIC"))
-	.Category(CATEGORY)
+	FunctionX(XLL_HANDLE, _T("?xll_tai_change_logarithmic"), TAI_PREFIX _T("CHANGE.LOGARITHMIC"))
+	.Uncalced()
+    .Category(CATEGORY)
 	.FunctionHelp(_T("Return the change in natuaral logarithm of Price."))
 	.Documentation(
 		_T("The <newTerm>logarithmic change</newTerm> is the difference between the logarithm of the current price and the logarithm of the last price. ")

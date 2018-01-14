@@ -7,7 +7,7 @@ using namespace technical;
 using namespace xll;
 
 static AddInX xai_tai_min(
-	FunctionX(XLL_HANDLEX XLL_UNCALCEDX, _T("?xll_tai_min"), TAI_PREFIX _T("MIN"))
+	FunctionX(XLL_HANDLE, _T("?xll_tai_min"), TAI_PREFIX _T("MIN"))
 	.Category(CATEGORY)
 	.FunctionHelp(_T("Return a handle to the running minimum indicator."))
 	.Documentation(
@@ -33,8 +33,9 @@ xll_tai_min()
 }
 
 static AddInX xai_tai_max(
-	FunctionX(XLL_HANDLEX XLL_UNCALCEDX, _T("?xll_tai_max"), TAI_PREFIX _T("MAX"))
-	.Category(CATEGORY)
+	FunctionX(XLL_HANDLE, _T("?xll_tai_max"), TAI_PREFIX _T("MAX"))
+	.Uncalced()
+    .Category(CATEGORY)
 	.FunctionHelp(_T("Return a handle to the running maximum indicator."))
 	.Documentation(
 		_T("This indicator has no parameters and the state is the running maximum. ")

@@ -10,7 +10,7 @@
 using namespace std;
 using namespace xll;
 using namespace technical;
-
+/*
 static AddInX xai_technical(
 	DocumentX(CATEGORY)
 	.Documentation(
@@ -51,14 +51,14 @@ static AddInX xai_technical(
 		)
 	)
 );
-
+*/
 //static Require(_T("xllarray"));
 
 static AddInX xai_ta_indicator(
-	FunctionX(XLL_FPX, _T("?xll_ta_indicator"), TA_PREFIX _T("INDICATOR"))
-	.Arg(XLL_HANDLEX, _T("Handle"), _T("is a handle to the technical indicator to be calculated."))
-	.Arg(XLL_FPX, _T("Prices"), _T("is an array of price data."))
-	.Arg(XLL_FPX, _T("State"), _T("is the intial state of the indicator. "))
+	FunctionX(XLL_FP, _T("?xll_ta_indicator"), TA_PREFIX _T("INDICATOR"))
+	.Arg(XLL_HANDLE, _T("Handle"), _T("is a handle to the technical indicator to be calculated."))
+	.Arg(XLL_FP, _T("Prices"), _T("is an array of price data."))
+	.Arg(XLL_FP, _T("State"), _T("is the intial state of the indicator. "))
 	.Category(CATEGORY)
 	.FunctionHelp(_T("Applies the indicator to prices."))
 	.Documentation(
@@ -72,7 +72,7 @@ xfp* WINAPI
 xll_ta_indicator(HANDLEX h, xfp* px, xfp* ps)
 {
 #pragma XLLEXPORT
-	static FPX x;
+	static xll::FP12 x;
 
 	try {
 		handle<indicator_base<>> h_(h);
@@ -83,7 +83,7 @@ xll_ta_indicator(HANDLEX h, xfp* px, xfp* ps)
 		if (size(*ps) && (size(*ps) == h_->size()))
 			h_->state(ps->array);
 
-		x.reshape(px->rows, static_cast<xword>(h_->osize()));
+		x.resize(px->rows, static_cast<xword>(h_->osize()));
 		for (xword i = 0; i < px->rows; ++i) {
 			double* py = h_->next(px->array + i*px->columns);
 			std::copy(py, py + x.columns(), x.begin() + i*x.columns());
@@ -99,10 +99,10 @@ xll_ta_indicator(HANDLEX h, xfp* px, xfp* ps)
 }
 
 static AddInX xai_ta_realtime(
-	FunctionX(XLL_FPX, _T("?xll_ta_realtime"), TA_PREFIX _T("REALTIME"))
-	.Arg(XLL_HANDLEX, _T("Handle"), _T("is a handle to the technical indicator to be calculated."))
-	.Arg(XLL_FPX, _T("Data"), _T("is a reference to real-time data."))
-	.Arg(XLL_FPX, _T("State"), _T("is the state of the indicator or the empty array. "))
+	FunctionX(XLL_FP, _T("?xll_ta_realtime"), TA_PREFIX _T("REALTIME"))
+	.Arg(XLL_HANDLE, _T("Handle"), _T("is a handle to the technical indicator to be calculated."))
+	.Arg(XLL_FP, _T("Data"), _T("is a reference to real-time data."))
+	.Arg(XLL_FP, _T("State"), _T("is the state of the indicator or the empty array. "))
 	.Category(CATEGORY)
 	.FunctionHelp(_T("Applies the indicator to Data."))
 	.Documentation(
@@ -114,7 +114,7 @@ xfp* WINAPI
 xll_ta_realtime(HANDLEX h, xfp* px, xfp* ps)
 {
 #pragma XLLEXPORT
-	static FPX x;
+	static xll::FP12 x;
 
 	try {
 		handle<indicator_base<>> h_(h);
@@ -128,9 +128,9 @@ xll_ta_realtime(HANDLEX h, xfp* px, xfp* ps)
 		double* y = h_->next(px->array);
 
 		if (px->columns == 1)
-			x.reshape(static_cast<xword>(h_->osize()), 1);
+			x.resize(static_cast<xword>(h_->osize()), 1);
 		else
-			x.reshape(1, static_cast<xword>(h_->osize()));
+			x.resize(1, static_cast<xword>(h_->osize()));
 
 		std::copy(y, y + x.size(), x.begin());
 	}
@@ -236,6 +236,6 @@ xll_test_indicator(void)
 
 	return 1;
 }
-static Auto<OpenAfterX> xao_test_indicator(xll_test_indicator);
+static Auto<Open> xao_test_indicator(xll_test_indicator);
 
 #endif // _DEBUG

@@ -8,8 +8,9 @@ using technical::true_range;
 using namespace xll;
 
 static AddInX xai_true_range(
-	FunctionX(XLL_HANDLEX XLL_UNCALCEDX, _T("?xll_true_range"), TAI_PREFIX _T("TRUE.RANGE"))
-	.Category(CATEGORY)
+	FunctionX(XLL_HANDLE, _T("?xll_true_range"), TAI_PREFIX _T("TRUE.RANGE"))
+	.Uncalced()
+    .Category(CATEGORY)
 	.FunctionHelp(_T("Returns a handle to the true range indicator: the maximum of the High and previous Close minus the minimum of the Low and previous Close."))
 	.Documentation(
 		_T("The idea of ranges is that they show the commitment or enthusiasm of traders. ")

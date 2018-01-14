@@ -7,10 +7,11 @@ using namespace technical;
 using namespace xll;
 
 static AddInX xai_tai_macd(
-	FunctionX(XLL_HANDLEX XLL_UNCALCEDX, _T("?xll_tai_macd"), TAI_PREFIX _T("MACD"))
-	.Arg(XLL_DOUBLEX, _T("Weight1"), _T("is the weight used to decay the minuend."))
-	.Arg(XLL_DOUBLEX, _T("Weight2"), _T("is the weight used to decay the subtrahend. "))
-	.Category(CATEGORY)
+	FunctionX(XLL_HANDLE, _T("?xll_tai_macd"), TAI_PREFIX _T("MACD"))
+	.Arg(XLL_DOUBLE, _T("Weight1"), _T("is the weight used to decay the minuend."))
+	.Arg(XLL_DOUBLE, _T("Weight2"), _T("is the weight used to decay the subtrahend. "))
+	.Uncalced()
+    .Category(CATEGORY)
 	.FunctionHelp(_T("Return a handle to the difference of exponentially weighted moving averages of prices."))
 	.Documentation(
 		_T("The parameters of this indicator are the weights to be used in the difference of the ")

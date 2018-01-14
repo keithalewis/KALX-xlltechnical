@@ -12,9 +12,6 @@
     <Filter Include="array">
       <UniqueIdentifier>{5f887ddc-ca2f-4d4b-98c0-96a19a017d0e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="utility">
-      <UniqueIdentifier>{9541b1ad-13c9-4915-aa74-b26a91deea94}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="xlltechnical.h">
@@ -22,9 +19,6 @@
     </ClInclude>
     <ClInclude Include="..\xllarray\array.h">
       <Filter>array</Filter>
-    </ClInclude>
-    <ClInclude Include="..\xllutility\utility.h">
-      <Filter>utility</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -67,20 +61,11 @@
     <ClCompile Include="xllmoments.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\xllarray\buffer.cpp">
-      <Filter>array</Filter>
-    </ClCompile>
     <ClCompile Include="..\xllarray\getset.cpp">
       <Filter>array</Filter>
     </ClCompile>
     <ClCompile Include="xlltrue_range.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\xllutility\this.cpp">
-      <Filter>utility</Filter>
-    </ClCompile>
-    <ClCompile Include="..\xllutility\utility.cpp">
-      <Filter>utility</Filter>
     </ClCompile>
     <ClCompile Include="xllminmax.cpp">
       <Filter>Source Files</Filter>

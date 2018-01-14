@@ -1,11 +1,14 @@
 // xlltechnical.h - commone header for Excel add-in routines
 #pragma once
 //#define EXCEL12
-#include "xll/xll.h"
+#include "../xll12/xll/xll.h"
 
 #ifndef CATEGORY
 #define CATEGORY _T("Technical")
 #endif
+
+#undef _T
+#define _T(x) L##x
 
 #ifndef TA_PREFIX
 #define TA_PREFIX _T("TA.")
@@ -19,9 +22,9 @@
 #define RT_PREFIX _T("RT.")
 #endif
 
-typedef xll::traits<XLOPERX>::xcstr xcstr;
-typedef xll::traits<XLOPERX>::xfp xfp;
-typedef xll::traits<XLOPERX>::xword xword;
+typedef const WCHAR* xcstr;
+typedef _FP12 xfp;
+typedef INT32 xword;
 
 template<class F>
 inline HANDLEX

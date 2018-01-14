@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -12,9 +12,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\xllarray\array.h" />
-    <ClInclude Include="..\xllutility\utility.h" />
     <ClCompile Include="..\xllarray\args.cpp" />
-    <ClCompile Include="..\xllarray\buffer.cpp" />
     <ClCompile Include="..\xllarray\drop.cpp" />
     <ClCompile Include="..\xllarray\getset.cpp" />
     <ClCompile Include="..\xllarray\index.cpp" />
@@ -24,8 +22,6 @@
   <ItemGroup>
     <ClCompile Include="..\xllarray\array.cpp" />
     <ClCompile Include="..\xllarray\empty.cpp" />
-    <ClCompile Include="..\xllutility\this.cpp" />
-    <ClCompile Include="..\xllutility\utility.cpp" />
     <ClCompile Include="xlllag.cpp" />
     <ClCompile Include="xllminmax.cpp" />
     <ClCompile Include="xllreset.cpp" />
@@ -38,18 +34,26 @@
     <ClCompile Include="xlltechnical.cpp" />
     <ClCompile Include="xlltick.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\xll12\xll12.vcxproj">
+      <Project>{3563c165-8a72-4be5-b8af-fd5904c9030e}</Project>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{B6A6158C-22FD-4367-88F3-AB36A723F7FD}</ProjectGuid>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -65,10 +69,12 @@
     <TargetExt>.xll</TargetExt>
     <LinkIncremental>true</LinkIncremental>
     <TargetName>technical</TargetName>
+    <IncludePath>..\xll12;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <TargetExt>.xll</TargetExt>
     <TargetName>technical</TargetName>
+    <IncludePath>..\xll12;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -84,6 +90,7 @@
       </PrecompiledHeader>
       <MinimalRebuild>false</MinimalRebuild>
       <TreatWarningAsError>true</TreatWarningAsError>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <LinkDLL>true</LinkDLL>
@@ -91,7 +98,7 @@
       <SubSystem>Windows</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
       <AdditionalLibraryDirectories>$(ProgramFiles)\KALX\xll\10\Debug\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>xll.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -109,6 +116,7 @@
       </PrecompiledHeader>
       <MinimalRebuild>false</MinimalRebuild>
       <TreatWarningAsError>true</TreatWarningAsError>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <LinkDLL>true</LinkDLL>
@@ -117,7 +125,7 @@
       <SubSystem>Windows</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
       <AdditionalLibraryDirectories>$(ProgramFiles)\KALX\xll\10\Release\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>xll.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

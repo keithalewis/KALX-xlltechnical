@@ -7,7 +7,7 @@ using namespace technical;
 using namespace xll;
 
 static AddInX xai_ta_tick_up(
-	FunctionX(XLL_HANDLEX XLL_UNCALCEDX, _T("?xll_tai_tick_up"), TAI_PREFIX _T("TICK.UP"))
+	FunctionX(XLL_HANDLE, _T("?xll_tai_tick_up"), TAI_PREFIX _T("TICK.UP"))
 	.Category(CATEGORY)
 	.FunctionHelp(_T("Return a handle to the up-tick indicator."))
 	.Documentation(
@@ -34,8 +34,9 @@ xll_tai_tick_up()
 }
 
 static AddInX xai_tai_tick_down(
-	FunctionX(XLL_HANDLEX XLL_UNCALCEDX, _T("?xll_tai_tick_down"), TAI_PREFIX _T("TICK.DOWN"))
-	.Category(CATEGORY)
+	FunctionX(XLL_HANDLE, _T("?xll_tai_tick_down"), TAI_PREFIX _T("TICK.DOWN"))
+	.Uncalced()
+    .Category(CATEGORY)
 	.FunctionHelp(_T("Return a handle to the down-tick indicator."))
 	.Documentation(
 		_T("This indicator has no parameters and the state is the last price. ")
